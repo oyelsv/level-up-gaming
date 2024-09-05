@@ -1,11 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
-    reactStrictMode: true,
-    images: {
-        unoptimized: true,
+  output: 'export',
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+  trailingSlash: true,
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
     },
-    trailingSlash: true,
+  },
 };
 
 export default nextConfig;
