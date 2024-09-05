@@ -1,3 +1,88 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "plugins": [
+    "import",
+    "prettier"
+  ],
+  "extends": [
+    "next",
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "ignorePatterns": ["!.*", "tailwind.config.js", "postcss.config.js"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index", "object", "type"]
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["state"] }],
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-no-useless-fragment": 0,
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "react/prop-types": "off",
+    "react/require-default-props": 0,
+    "no-nested-ternary": 0,
+    "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+    "radix": 0,
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": false
+      }
+    ],
+    "max-len": [
+      "error",
+      { "code": 120 }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "printWidth": 120,
+        "semi": true,
+        "useTabs": false,
+        "singleQuote": true,
+        "bracketSpacing": true,
+        "arrowParens": "always"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  }
 }
