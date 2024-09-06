@@ -14,15 +14,6 @@ const nextConfig = {
 
     return config;
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/store',
-        permanent: true,
-      },
-    ]
-  },
 };
 
 export default nextConfig;
