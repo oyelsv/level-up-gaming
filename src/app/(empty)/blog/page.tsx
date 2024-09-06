@@ -3,7 +3,7 @@ import React from 'react';
 function ReviewsPage() {
   return (
     <div>
-      <span>123</span>
+      <h1 className="text-2xl font-semibold">Blog</h1>
     </div>
   );
 }
