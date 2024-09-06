@@ -10,24 +10,26 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navigation: { [key: string]: string }[] = [
-  { caption: 'store' },
-  { caption: 'reviews' },
-  { caption: 'blog' },
-  { caption: 'media' },
-  { caption: 'locations' },
-  { caption: 'contact' },
+  { href: '/', caption: 'store' },
+  { href: '/reviews', caption: 'reviews' },
+  { href: '/blog', caption: 'blog' },
+  { href: '/media', caption: 'media' },
+  { href: '/locations', caption: 'locations' },
+  { href: '/contact', caption: 'contact' },
 ];
 
 export function Header() {
   const pathname = usePathname();
-  const isActive = (link: string) => pathname.replace(/\//g, '') === link;
+  const isActive = (href: string) => pathname.replace(/\//g, '') === href;
 
   return (
     <header className="flex items-center w-full py-3 px-8 bg-header">
-      <Image src={logoUrl} alt="logo" priority />
+      <Link href="/" className="shrink-0">
+        <Image src={logoUrl} alt="logo" priority />
+      </Link>
       <nav className="m-auto px-4">
         <ul className="flex items-center">
-          {navigation.map(({ caption }) => (
+          {navigation.map(({ href, caption }) => (
             <li key={caption}>
               <Button
                 asChild
@@ -37,7 +39,7 @@ export function Header() {
                   isActive(caption) ? 'font-medium text-primary-foreground' : 'font-normal'
                 )}
               >
-                <Link href={`/${caption}`}>{caption}</Link>
+                <Link href={href}>{caption}</Link>
               </Button>
             </li>
           ))}
