@@ -2,10 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-import logoUrl from '@/static/icons/svg/logo.svg?url';
+import LogoIcon from '@/static/icons/svg/logo.svg';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -24,9 +23,7 @@ export function Header() {
 
   return (
     <header className="flex items-center w-full py-3 px-8 bg-header">
-      <Link href="/" className="shrink-0">
-        <Image src={logoUrl} alt="logo" priority />
-      </Link>
+      <LogoIcon className="w-[108px] h-[33px] shrink-0" />
       <nav className="m-auto px-4">
         <ul className="flex items-center">
           {navigation.map(({ href, caption }) => (

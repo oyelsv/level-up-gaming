@@ -51,6 +51,7 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
         header: 'hsl(var(--header))',
+        badge: 'hsl(var(--badge))',
       },
       borderRadius: {
         lg: 'var(--radius)',
