@@ -50,8 +50,6 @@ export default function Store() {
     setLayout(newLayout);
   };
 
-  console.log(layout);
-
   return (
     <>
       <div className="flex items-center gap-4 lg:gap-7 mb-2 md:mb-9">
