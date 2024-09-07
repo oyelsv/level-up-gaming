@@ -7,7 +7,7 @@ import GridIcon from '@/static/icons/svg/grid.svg';
 import ListIcon from '@/static/icons/svg/list.svg';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { ProductCard } from '@/components/ProductCard';
+import { ProductList } from '@/components/ProductList';
 
 export default function Store() {
   return (
@@ -28,8 +28,8 @@ export default function Store() {
           </Button>
         </div>
       </div>
-      <h1 className="text-xl font-semibold pt-1 mb-2 md:mb-7">Products</h1>
-      <ProductCard />
+      <h1 className="text-xl font-semibold pt-1 mb-2 md:mb-7">All Products</h1>
+      <ProductList />
     </div>
   );
 }

@@ -5,7 +5,18 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 
-export function ProductCard() {
+interface ITag {
+  label: string;
+}
+
+export interface IProduct {
+  price: string;
+  title: string;
+  description: string;
+  tags: ITag[];
+}
+
+export function ProductItem() {
   return (
     <Card className="w-full md:max-w-[300px] bg-zinc-900 text-white rounded-xl border-0">
       <CardHeader className="p-0">
@@ -37,4 +48,4 @@ export function ProductCard() {
   );
 }
 
-ProductCard.displayName = 'ProductCard';
+ProductItem.displayName = 'ProductItem';
