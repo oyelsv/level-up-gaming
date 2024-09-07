@@ -23,7 +23,9 @@ export function Header() {
 
   return (
     <header className="flex items-center w-full py-3 px-8 bg-header">
-      <LogoIcon className="w-[108px] h-[33px] shrink-0" />
+      <Link href="/">
+        <LogoIcon className="w-[108px] h-[33px] shrink-0" />
+      </Link>
       <nav className="m-auto px-4">
         <ul className="flex items-center">
           {navigation.map(({ href, caption }) => (
@@ -33,7 +35,7 @@ export function Header() {
                 variant="link"
                 className={cn(
                   'text-lg capitalize',
-                  isActive(caption) ? 'font-medium text-primary-foreground' : 'font-normal'
+                  isActive(caption) || href === pathname ? 'font-medium text-primary-foreground' : 'font-normal'
                 )}
               >
                 <Link href={href}>{caption}</Link>
