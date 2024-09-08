@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        cover: 'hsl(var(--cover))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -42,6 +43,8 @@ const config: Config = {
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
+        badge: 'hsl(var(--badge))',
+        'badge-foreground': 'hsl(var(--badge-foreground))',
         ring: 'hsl(var(--ring))',
         chart: {
           '1': 'hsl(var(--chart-1))',
@@ -50,8 +53,10 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-        header: 'hsl(var(--header))',
-        badge: 'hsl(var(--badge))',
+        snow: 'hsl(var(--snow))',
+        'snow-foreground': 'hsl(var(--snow-foreground))',
+        shine: 'hsl(var(--shine))',
+        invert: 'hsl(var(--invert))',
       },
       borderRadius: {
         lg: 'var(--radius)',
