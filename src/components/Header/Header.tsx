@@ -6,8 +6,9 @@ import { ShoppingCart, PanelLeft } from 'lucide-react';
 
 import LogoIcon from '@/static/icons/svg/logo.svg';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import LogoShortIcon from '@/static/icons/svg/logo_short.svg';
 
 import { Nav } from './Nav';
 
@@ -30,8 +31,14 @@ export function Header() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="sm:max-w-xs">
+          <SheetDescription />
+          <SheetTitle className="flex mt-6 px-2">
+            <Link href="/">
+              <LogoShortIcon className="w-8 h-8 shrink-0" />
+            </Link>
+            <ThemeSwitcher className="ml-auto" />
+          </SheetTitle>
           <Nav navigation={navigation} className="py-6 px-0" />
-          <ThemeSwitcher />
         </SheetContent>
       </Sheet>
       <Link href="/" className="ml-auto md:ml-0">
