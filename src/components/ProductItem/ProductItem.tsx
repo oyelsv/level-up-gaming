@@ -43,7 +43,7 @@ export function ProductItem({ layout, thumbnail, title, price, tags, description
             'relative flex overflow-hidden'
           )}
         >
-          <Image src={thumbnail} alt="ps5" fill style={{ objectFit: 'cover', margin: 'auto' }} />
+          <Image src={thumbnail} alt={title} fill style={{ objectFit: 'cover', margin: 'auto' }} />
         </div>
       </CardHeader>
       <CardContent className={cn(isGridMode && 'p-4', isListMode && 'flex flex-1 items-center py-0 px-3')}>
