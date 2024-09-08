@@ -48,7 +48,11 @@ export function ProductItem({ layout, thumbnail, title, price, tags, description
       </CardHeader>
       <CardContent className={cn(isGridMode && 'p-4', isListMode && 'flex flex-1 items-center py-0 px-3')}>
         <div
-          className={cn(isGridMode && 'mb-3 leading-4', isListMode && 'ml-auto order-4 leading-[14px]', 'text-invert')}
+          className={cn(
+            isGridMode && 'mb-3 leading-4',
+            isListMode && 'ml-auto order-4 text-sm leading-4',
+            'text-invert'
+          )}
         >
           {price}
         </div>
