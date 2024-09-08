@@ -77,7 +77,7 @@ export function ProductItem({ layout, thumbnail, title, price, tags, description
       <CardFooter className={cn(isGridMode && 'pt-0.5 px-4 pb-4', isListMode && 'p-0')}>
         <Button
           size={isGridMode ? 'lg' : 'sm'}
-          className={cn(isListMode && 'hidden md:flex', 'w-full leading-5')}
+          className={cn(isListMode && 'text-sm hidden md:flex', 'w-full leading-5')}
           variant="outline"
         >
           View Details

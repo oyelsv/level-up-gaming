@@ -63,7 +63,7 @@ export default function Store() {
           </Button>
         </div>
       </div>
-      <h1 className="text-xl font-semibold text-invert pt-1 mb-2 md:mb-7">All Products</h1>
+      <h1 className="text-[22px] leading-5 font-semibold text-invert pt-1 mb-2 md:mb-7">All Products</h1>
       <ProductList layout={layout} isLoading={isLoading} products={data?.items ?? []} />
     </>
   );

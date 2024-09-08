@@ -28,7 +28,7 @@ export function Nav({ isList = true, className, navigation }: INav) {
               variant="link"
               className={cn(
                 isActive(caption) || href === pathname ? 'font-medium text-shine' : 'font-normal text-foreground',
-                'text-lg capitalize'
+                'text-lg capitalize leading-5'
               )}
             >
               <Link href={href}>{caption}</Link>
