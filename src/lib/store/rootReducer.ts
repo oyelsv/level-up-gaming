@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { boApi } from '@/features/core/api/store/api';
+import { levelUpGamingApi } from '@/features/core/api/store/api';
 
 const rootReducer = combineReducers({
-  [boApi.reducerPath]: boApi.reducer,
+  [levelUpGamingApi.reducerPath]: levelUpGamingApi.reducer,
 });
 
 export default rootReducer;

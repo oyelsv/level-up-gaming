@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { boApi } from '@/features/core/api/store';
+import { levelUpGamingApi } from '@/features/core/api/store';
 
 import rootReducer from './rootReducer';
 
@@ -11,7 +11,7 @@ export const setupStore = (preloadedState: Partial<ReturnType<typeof rootReducer
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: false,
-      }).concat(boApi.middleware),
+      }).concat(levelUpGamingApi.middleware),
     devTools: process.env.NODE_ENV !== 'production',
   });
 

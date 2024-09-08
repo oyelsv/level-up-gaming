@@ -27,7 +27,7 @@ const baseQueryWithAuthRefresh: BaseQueryFn<string | FetchArgs, unknown, FetchBa
   return result;
 };
 
-export const boApi = createApi({
+export const levelUpGamingApi = createApi({
   reducerPath: 'api',
   baseQuery: baseQueryWithAuthRefresh,
   endpoints: () => ({}),

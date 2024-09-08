@@ -34,3 +34,7 @@ export type IApiResponse<R> = IApiSuccessResponse<R> | IApiErrorResponse<R>;
 export interface IListResult<T> {
   items: Array<T>;
 }
+
+export interface IPaginatedResult<T> extends IListResult<T> {
+  totalCount: number;
+}
