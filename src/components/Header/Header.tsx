@@ -2,13 +2,16 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { ShoppingCart, PanelLeft } from 'lucide-react';
 
 import LogoIcon from '@/static/icons/svg/logo.svg';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
-const navigation: { [key: string]: string }[] = [
+import { Nav } from './Nav';
+
+const navigation: { href: string; caption: string }[] = [
   { href: '/', caption: 'store' },
   { href: '/reviews', caption: 'reviews' },
   { href: '/blog', caption: 'blog' },
@@ -18,34 +21,28 @@ const navigation: { [key: string]: string }[] = [
 ];
 
 export function Header() {
-  const pathname = usePathname();
-  const isActive = (href: string) => pathname.replace(/\//g, '') === href;
-
   return (
-    <header className="flex items-center w-full py-3 px-8 bg-header">
-      <Link href="/">
+    <header className="flex items-center w-full py-3 px-4 lg:px-8 bg-background shadow">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size="icon" variant="outline" className="md:hidden">
+            <PanelLeft className="h-5 w-5" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left" className="sm:max-w-xs">
+          <Nav navigation={navigation} className="py-6 px-0" />
+          <ThemeSwitcher />
+        </SheetContent>
+      </Sheet>
+      <Link href="/" className="ml-auto md:ml-0">
         <LogoIcon className="w-[108px] h-[33px] shrink-0" />
       </Link>
-      <nav className="m-auto px-4">
-        <ul className="flex items-center">
-          {navigation.map(({ href, caption }) => (
-            <li key={caption}>
-              <Button
-                asChild
-                variant="link"
-                className={cn(
-                  'text-lg capitalize',
-                  isActive(caption) || href === pathname ? 'font-medium text-primary-foreground' : 'font-normal'
-                )}
-              >
-                <Link href={href}>{caption}</Link>
-              </Button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <Button variant="outline" size="lg">
+      <Nav isList={false} navigation={navigation} className="hidden md:flex m-auto" />
+      <Button variant="outline" size="lg" className="hidden md:flex ml-auto">
         View Cart
+      </Button>
+      <Button variant="outline" size="icon" className="flex md:hidden ml-auto">
+        <ShoppingCart />
       </Button>
     </header>
   );
