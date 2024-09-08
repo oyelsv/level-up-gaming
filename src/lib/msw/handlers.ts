@@ -1,3 +1,3 @@
-/* Handlers should be placed here */
+import mockHandlers from '@/mocks';
 
-export const handlers = [];
+export const handlers = [...mockHandlers];
