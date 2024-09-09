@@ -1,4 +1,4 @@
-import { levelUpGamingApi, IPaginatedResult, transformResponse } from '@/features/core/api';
+import { IPaginatedResult, levelUpGamingApi, transformResponse } from '@/features/core/api';
 
 import { IProduct } from '../models';
 
@@ -12,10 +12,13 @@ export const productsApi = levelUpGamingApi
   })
   .injectEndpoints({
     endpoints: (build) => ({
-      getProducts: build.query<IPaginatedResult<IProduct>, void>({
-        query: () => ({
+      getProducts: build.query<IPaginatedResult<IProduct>, { searchQuery?: string }>({
+        query: ({ searchQuery }) => ({
           url: '/products',
-          method: 'GET',
+          method: 'POST',
+          body: {
+            searchQuery,
+          },
         }),
         providesTags: [PRODUCT_ITEM_TAG],
         transformResponse,

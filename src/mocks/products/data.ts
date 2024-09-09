@@ -1,7 +1,3 @@
-// import { factory, primaryKey } from '@mswjs/data';
-// import { faker } from '@faker-js/faker';
-
-// import { MockModelFactory } from '@/helpers/types';
 import { IProduct } from '@/features/product/models';
 
 export const products: IProduct[] = [
@@ -96,19 +92,3 @@ export const products: IProduct[] = [
     ],
   },
 ];
-//
-// export const productMockModel: MockModelFactory<Pick<IProduct, 'id'>> = {
-//   id: primaryKey(Number),
-// };
-//
-// export const db = factory({
-//   product: productMockModel,
-// });
-//
-// const PRODUCTS_TOTAL = 6;
-//
-// for (let i = 0; i < PRODUCTS_TOTAL; i++) {
-//   db.product.create({
-//     id: i + 1,
-//   });
-// }
