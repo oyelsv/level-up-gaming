@@ -26,7 +26,7 @@ export function Header() {
     <header className="flex items-center w-full py-3 px-4 lg:px-8 bg-background shadow">
       <Sheet>
         <SheetTrigger asChild>
-          <Button size="icon" variant="outline" className="md:hidden">
+          <Button size="icon" variant="outline" className="md:hidden mr-auto">
             <PanelLeft className="h-5 w-5" />
           </Button>
         </SheetTrigger>
@@ -41,7 +41,7 @@ export function Header() {
           <Nav navigation={navigation} className="py-6 px-0" />
         </SheetContent>
       </Sheet>
-      <Link href="/" className="ml-auto md:ml-0">
+      <Link href="/" className="ml-auto md:ml-0 mr-auto">
         <LogoIcon className="w-[108px] h-[33px] shrink-0" />
       </Link>
       <Nav isList={false} navigation={navigation} className="hidden md:flex m-auto" />

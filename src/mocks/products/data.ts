@@ -7,7 +7,7 @@ import { IProduct } from '@/features/product/models';
 export const products: IProduct[] = [
   {
     id: '1',
-    thumbnail: '/img/ps5_controller@2x.jpg',
+    thumbnail: '/static/ps5_controller@2x.jpg',
     title: 'PS5 Controller',
     price: '70.00$',
     description: 'A sleek, ergonomic PlayStation controller with responsive buttons and adaptive triggers.',
